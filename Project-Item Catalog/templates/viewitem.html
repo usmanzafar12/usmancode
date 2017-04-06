@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block item %}
+
+<div class="col-md-4 ">
+
+<h4>Item Name</h4>
+{{name}}
+<h4>Item Description</h4>
+{{desc}}
+
+<br>
+    <a class="btn btn-default" href='{{ url_for('main')}}'>Back</a>
+       
+</div>        
+{% endblock item %}

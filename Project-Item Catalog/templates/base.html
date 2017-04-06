@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block header %}
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Item CatalogApp</title>      
+         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap-theme.min.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style3.css') }}"> 
+        <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class ="row row1 nav navbar">
+                 <div class="col-md-6 text-left">
+                     {%if login_session['id'] %}
+
+                     <a href='{{ url_for('category.create_category') }}'><p>create a new category</p></a>
+                     <a  href='{{ url_for('item.create_item') }}'><p class="text-nowrap">create a new item</p></a>
+                     {% endif %}
+
+                </div>
+                
+                <div class="col-md-6 text-right">
+                    {%if login_session['id']%}
+                        <a type="button" href="{{url_for('logout')}}" class="btn btn-success" type="submit">Logout</a>
+                    {%else%}
+                    <a type="button" href="{{ url_for('login') }}" class="btn btn-default" type="submit">Login</a>
+                    {%endif%}
+                        
+                </div>
+               
+            </div>
+            <div class="row">
+                {% block category %}
+
+                {% endblock%}
+                
+                {% block item %}
+
+                {% endblock %}
+                    
+            </div>
+        </div>
+    </body>
+</html>

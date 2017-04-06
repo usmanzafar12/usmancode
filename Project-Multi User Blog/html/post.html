@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block content %}
+<form action= {{method}} method="get">
+    <h1> {{title}} </h1>
+    <p> {{content}} </p>	
+    <input type=hidden name="name" value="{{identifier}}">
+    <input type="submit" value="Edit" >
+</form>
+<span>
+{% if flag  %}
+    <a href="like-{{identifier}}">Like</a> 
+{% else: %}
+    <a href="unlike-{{identifier}}">Unlike</a> 
+{% endif %}
+    <a href="delete-{{identifier}}">Delete</a> 
+    <a href="userblog">Cancel</a>
+
+
+</span>
+<p>Likes {{count}}</p>
+<p> Add a comment </p> 
+<br>
+<form action = addcomment-{{identifier}} method = post>
+    <textarea name = comment>
+    </textarea>
+    <br>
+    <input type = submit value = Add>
+</form>
+
+
+{% for value in comments %}
+<p>Posted By {{user[loop.index0]}} </p>
+<span><p> {{value}} </p>
+<a href="editcomment-{{comment_identifier[loop.index0]}}">Edit</a>   
+<a href="delcomment-{{comment_identifier[loop.index0]}}">Delete</a>   
+</span>
+{%endfor%}
+
+
+{% endblock %}

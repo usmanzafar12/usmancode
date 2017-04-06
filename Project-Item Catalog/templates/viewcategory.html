@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block category%}
+
+<div class="col-md-3 text-center">
+<h3>a list of categories</h3>
+
+{% for val in categories %}
+
+<a class="c-block link-m" text-center href='{{ url_for('category.view_category', id = val.id) }}'>{{val.name}}</a>
+{% if loop.index0 == index %}
+    
+<span class="c-inline">
+<a class="" text-center href='{{ url_for('category.delete_category', id = val.id) }}'>Delete</a>
+<a class="" text-center href='{{ url_for('category.edit_category', id = val.id) }}'>Edit</a>
+    
+{% endif %}
+</span>
+{% endfor %}
+</div>
+{% endblock category %}
+
+
+{% block item %}
+<div class="col-md-6 text-left">
+
+{%if items%}
+    <h3>items</h3>    
+    
+{% else %}
+    <p>There are no items currently</p>
+
+{% endif %}
+
+
+
+<ul>
+{% for val in items %}
+   
+    {{val.name}}
+    <span class="c-inline">
+
+    <li><a href='{{ url_for('item.view_item', id = val.id)}}'>View</a> 
+    <a href='{{ url_for('item.delete_item', id = val.id)}}'>Delete</a> 
+    <a href='{{ url_for('item.edit_item', id = val.id)}}'>Edit</a></li>
+    </span>
+
+
+{% endfor %}
+</ul>
+
+</div>
+{% endblock item %}
+

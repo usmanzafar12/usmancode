@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel= "stylesheet"  href= "bootstrap.min.css">
+    <link rel= "stylesheet"  href= 'bootstrap-theme.min.css'>
+    <link rel= "stylesheet"  href= 'style.css'>
+
+
+    
+<!-- Include Google Maps JS API -->
+  
+
+</head>
+<body>
+<!-- Map creation is here -->
+<div class='container'> 
+
+
+    <b>My First Map </b>
+    <div class=row>
+
+    <div id="menuList" class = col-md-3>
+        
+        <p>Filter by type : </p>
+        <p>(university, hall, mall, store, fastfood)</p>
+            <input type="search" data-bind="textInput: locType" />
+        <ul data-bind="foreach: filteredItems">
+            <li><a href="#" data-bind="text: $data.name, visible: $data.flag, click: setMarker" >
+                </a>
+        </ul>
+        
+        </div>    
+        <div id="mapDiv" class = col-md-6></div>    
+
+    </div>
+    </div>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.1/knockout-min.js"></script>
+<script  src="data.js" ></script>
+<script  src="controller.js"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXEh-Y4vHfQHTCpGPWgKj2wG8s-dYMV0s&callback=onGmapLoad"
+async defer onerror="mapError()"> </script>     
+</body>
+
+     
+</html>
+
+<!--<script src="practice.js"></script>-->

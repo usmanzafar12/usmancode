@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+{% block content %}
+<p> Please enter the title of your blog </p>
+{{blog}}
+<form method=post name="blogform" action="thanks">
+    <input type=text name="title" value="{{title}}">
+    <p> Enter Your Blog Brotha </p>
+    <textarea name="blog"  
+    placeholder="Blease enter the blog aah aah aah">
+    {{content}}
+    </textarea>
+    <br>
+    <input type=submit name="Submit" value="SuBMiTted">
+    <input type=hidden name="identifier" value={{identifier}}>    
+
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block content %}
+<h2>Please Enter Your Username And Password For Signing In</h2>
+<form method="post" action="/sin/userblog">
+    UserName <input type=text name="username">
+    Password <input type=password name="password" >
+    <input type=submit value = Enter>
+    
+</form>
+<p>{{error_message}}</p>
+{% endblock %}

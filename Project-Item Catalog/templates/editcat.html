@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block item %}
+<div class="col-md-4 ">
+
+<form method="post" action="{{url_for('category.edit_category', id = cat_view.id) }}">
+    <div class="form-group">
+
+    <label>Please enter the name for the category</label>
+    <input class="form-control" type=text name="name" value={{cat_view.name}}>
+    <span class="c-inline"><button type="submit" class="btn btn-default">Submit</button>
+        <p>OR</p> 
+        <a href='{{ url_for('main') }}'><p>Cancel</p></a>
+
+        
+    </span>    </div>.
+        </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block content %}
+<form action=editcomment-{{identifier}}  method="post">
+    <textarea name = comment>
+    {{content}}
+    </textarea>
+    
+    <input type="submit" value="Submit" >
+
+</form>    
+{% endblock %}

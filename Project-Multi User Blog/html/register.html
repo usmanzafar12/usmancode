@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+{% block content %}
+<h2>Please Enter Your Username And Password For Registration</h2>
+<form method="post" action="/regcheck">
+    UserName <input type=text name="username" value={{name}}>
+    Password <input type=password name="password" >
+    <input type=submit value = Enter>
+</form>
+<p>{{message}}</p>
+{% endblock %}

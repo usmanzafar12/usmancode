@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block category%}
+
+
+
+
+<div class="col-md-3 text-center">
+    
+       
+    <h3>a list of categories</h3>
+    {%for val in categories %}
+    <a class="c-block link-m text-center" href='{{ url_for('category.view_category', id = val.id) }}'>{{val.name}}</a>
+    {% endfor %}
+    <br>
+</div>
+
+
+
+
+{% endblock category %}
+
+
+
+{% block item %}
+<div class="col-md-6 text-left front-col2">
+
+<h3>Click on a category to view the items.</h3>
+</div>
+{% endblock item %}
+
+

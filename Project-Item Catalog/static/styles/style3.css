@@ -1,0 +1,21 @@
+.row1 {
+    padding-top: 1%;
+}
+
+span, .c-inline p {
+    display: inline;
+}
+
+
+.c-block {
+    display: block;
+}
+
+.front-col2 {
+    padding-top: 5%;
+}
+
+.link-m {
+    font-family: Lato;
+    color: black;
+}

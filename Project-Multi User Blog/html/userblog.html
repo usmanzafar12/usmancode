@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% block content %}
+<p>Hello {{user}} !</p>
+<p>You may enter a new blog <a href="blogentry">here</a></p>
+<h3> Here is list of all the posts in the blog </h3>
+<h4>{{query}} </h4>
+<ul>
+  {% for n in text %}
+   <li><a href = "post-{{identifier[loop.index0]}}"> {{n}}</a></li>
+  {% endfor %}
+</ul>
+<form method="get" action="logout">
+<p> you can always log out. Just press this button</p>
+<input type="submit" name=signout value="Log Out!">
+</form>
+{% endblock %}
